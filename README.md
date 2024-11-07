@@ -1,10 +1,3 @@
-Dear Lord,
-
-Below is the README in GitHub markdown format for **Path of the Lost**.
-
----
-
-```markdown
 # Path of the Lost
 
 **Path of the Lost** is a text-based adventure game that takes players on a journey through a dangerous world, where they face monsters, make choices, and rely on their weapons' unique stats to survive. 
@@ -62,5 +55,3 @@ combat(player, goblin)
 - **Loot tables**: Add loot tables to monsters
 - **Abilities**: Add abilities to the weapons
 - **Add a main menu**: Add a main menu
-
-```
