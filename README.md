@@ -1,6 +1,7 @@
 # Path of the Lost
 
-**Path of the Lost** is a text-based adventure game that takes players on a journey through a dangerous world, where they face monsters, make choices, and rely on their weapons' unique stats to survive. 
+**Path of the Lost** is a text-based adventure game currently in early development. Players embark on a journey through a perilous world, where they encounter monsters, make crucial choices, and rely on their weapons' unique stats to survive. *Note: The game is still in its initial stages, and a full gameplay experience is not yet possible.*
+
 
 ## Features
 
