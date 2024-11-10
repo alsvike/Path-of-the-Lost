@@ -60,8 +60,7 @@ def combat(player, monster):
         print(f"You have defeated the monster! You continue on your journey with {player.hp} HP remaining.")
 
 # game setup
-name = input("Enter your name: ")
-print("Hello " + name + " welcome to my game!")
+
 
 should_we_play = input("Do you want to play? (yes/no)\n").lower()
 
