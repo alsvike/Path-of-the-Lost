@@ -1,14 +1,56 @@
 #imports
 import time
 import os
+import keyboard
 
 # Description: Contains the functions used in the game.
 
-# menu function
+# Function to clear the screen
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# Display menu function with selection
+def display_menu(options, selected):
+    clear_screen()
+    print("=== Main Menu ===\n")
+    
+    # Display options, highlighting the selected one
+    for i, option in enumerate(options):
+        if i == selected:
+            print(f"> [{i + 1}] {option} <")  # Highlight selected option
+        else:
+            print(f"  [{i + 1}] {option}")
+    print("\nUse 'w' or UP for up, 's' or DOWN for down, and Enter to select.")
+
+# Main menu function with navigation
 def menu():
-    print("[1] Start Game")
-    print("[2] Instructions")
-    print("[3] Exit")
+    options = ["Start Game", "Instructions", "Exit"]
+    selected = 0
+    
+    # Display the menu for the first time
+    display_menu(options, selected)
+
+    # Wait for key presses
+    while True:
+        # Move up with 'w' or UP arrow key
+        if (keyboard.is_pressed('w') or keyboard.is_pressed('up')) and selected > 0:
+            selected -= 1
+            display_menu(options, selected)
+            time.sleep(0.2)  # Prevent fast cycling
+            while keyboard.is_pressed('w') or keyboard.is_pressed('up'):  # Wait for key release
+                pass
+        # Move down with 's' or DOWN arrow key
+        elif (keyboard.is_pressed('s') or keyboard.is_pressed('down')) and selected < len(options) - 1:
+            selected += 1
+            display_menu(options, selected)
+            time.sleep(0.2)  # Prevent fast cycling
+            while keyboard.is_pressed('s') or keyboard.is_pressed('down'):  # Wait for key release
+                pass
+        # Select the option with Enter
+        elif keyboard.is_pressed('enter'):
+            while keyboard.is_pressed('enter'):  # Wait for Enter release
+                pass
+            return selected + 1
 
 # instructions function
 def show_instructions():
