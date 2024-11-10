@@ -3,7 +3,20 @@ import time
 import os
 import keyboard
 
+# constants
+from constants import weapons
+
 # Description: Contains the functions used in the game.
+
+# Print weapon information
+def print_weapons(weapons):
+    print("Available Weapons:\n")
+    for weapon, stats in weapons.items():
+        print(f"Weapon: {weapon.capitalize()}")
+        print(f"  Min Damage : {stats['min_damage']}")
+        print(f"  Max Damage : {stats['max_damage']}")
+        print(f"  Durability : {stats['durability']}")
+        print("-" * 30)
 
 # Function to clear the screen
 def clear_screen():
@@ -61,7 +74,7 @@ def show_instructions():
     print("4. Make choices wisely as they affect the outcome of your adventure.")
 
 # animated text function
-def animated_text(text, delay=0.07):
+def animated_text(text, delay=0.055):
     for char in text:
         print(char, end="", flush=True)
         time.sleep(delay)
@@ -77,7 +90,7 @@ def combat(player, monster):
         if action == "":
             player.attack(monster)
         else:
-            print("Press only 'Enter' to continue.")
+            print("Press 'Enter' to continue.")
             continue
 
         if monster.is_alive():

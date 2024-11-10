@@ -1,10 +1,5 @@
-# packages
-import time
-
 # file imports
-from constants import weapons
-from classes import Player, Monster
-from functions import menu, show_instructions, animated_text, combat, clear_console
+from functions import menu, show_instructions
 from chapters import chapter1
 
 # Show menu and get the first option
