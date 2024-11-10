@@ -1,5 +1,6 @@
 #imports
 import time
+import os
 
 # Description: Contains the functions used in the game.
 
@@ -47,3 +48,7 @@ def combat(player, monster):
         print("You have been defeated!")
     else:
         print(f"You have defeated the monster! You continue on your journey with {player.hp} HP remaining.")
+
+# Clear the console
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
