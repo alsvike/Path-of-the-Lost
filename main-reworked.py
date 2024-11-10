@@ -1,6 +1,5 @@
 # packages
 import time
-import os
 
 # file imports
 from constants import weapons
